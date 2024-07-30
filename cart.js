@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.getElementById('reset-cart');
     const totalQuantityElement = document.getElementById('total-quantity');
     const totalPriceElement = document.getElementById('total-price');
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
     const products = [
         { id: 1, name: 'Product 1', price: 10, image: 'product1.jpg' },
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function saveCart() {
-        localStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('cart', JSON.stringify(cart));
     }
 
     function renderCart() {
